@@ -9,8 +9,8 @@ env:
   REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x.git
   REPO_BRANCH: main
   CONFIG_FILE: configs/ZN_M2.config
-  DIY_SCRIPT: diy-script-ZN_M2.sh
-  PRESET_SCRIPT: preset-script-ZN_M2.sh
+  DIY_SCRIPT: scripts/diy-script-ZN_M2.sh
+  PRESET_SCRIPT: scripts/preset-script-ZN_M2.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
