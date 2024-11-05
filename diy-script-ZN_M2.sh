@@ -55,12 +55,6 @@ UPDATE_PACKAGE "luci-app-adguardhome" "https://github.com/ysuolmai/luci-app-adgu
 # WOLPuls
 UPDATE_PACKAGE "luci-app-wolplus" "https://github.com/animegasan/luci-app-wolplus" "main"
 
-# 在线用户
-UPDATE_PACKAGE "luci-app-onliner" "https://github.com/danchexiaoyang/luci-app-onliner" "main" "pkg"
-sed -i '$i uci set nlbwmon.@nlbwmon[0].refresh_interval=2s' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci commit nlbwmon' package/lean/default-settings/files/zzz-default-settings
-chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
-
 # 修改本地时间格式
 sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
 
