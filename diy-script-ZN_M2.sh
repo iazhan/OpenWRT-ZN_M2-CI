@@ -53,7 +53,7 @@ UPDATE_PACKAGE "luci-app-smartdns" "https://github.com/pymumu/luci-app-smartdns"
 UPDATE_PACKAGE "luci-app-adguardhome" "https://github.com/ysuolmai/luci-app-adguardhome" "master"
 
 # WOLPuls
-UPDATE_PACKAGE "luci-app-wolplus" "https://github.com/tty228/luci-app-wolplus" "main"
+UPDATE_PACKAGE "luci-app-wolplus" "https://github.com/animegasan/luci-app-wolplus" "main"
 
 # 在线用户
 UPDATE_PACKAGE "luci-app-onliner" "https://github.com/danchexiaoyang/luci-app-onliner" "main" "pkg"
