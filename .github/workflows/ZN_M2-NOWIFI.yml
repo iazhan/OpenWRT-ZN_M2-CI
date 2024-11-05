@@ -10,6 +10,7 @@ env:
   REPO_BRANCH: main
   CONFIG_FILE: configs/ZN_M2.config
   DIY_SCRIPT: diy-script-ZN_M2.sh
+  PRESET_SCRIPT: preset-script-ZN_M2.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
@@ -102,6 +103,7 @@ jobs:
         chmod +x ${DIY_SCRIPT}
         cd $OPENWRT_PATH
         ${GITHUB_WORKSPACE}/${DIY_SCRIPT}
+        ${GITHUB_WORKSPACE}/${PRESET_SCRIPT}
 
     - name: Download DL Package(下载DL软件包)
       run: |
