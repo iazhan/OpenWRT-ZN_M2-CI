@@ -42,15 +42,18 @@ rm -rf package/feeds/kenzo
 UPDATE_PACKAGE "luci-theme-argon" "https://github.com/jerrykuku/luci-theme-argon" "master"
 UPDATE_PACKAGE "luci-app-argon-config" "https://github.com/jerrykuku/luci-app-argon-config" "master"
 
-# Passwall
-UPDATE_PACKAGE "luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall" "main" "pkg"
+# Homeproxy
+UPDATE_PACKAGE "luci-app-homeproxy" "https://github.com/immortalwrt/homeproxy" "main"
 
-# SmartDNS
-UPDATE_PACKAGE "smartdns" "https://github.com/pymumu/openwrt-smartdns" "master" "name"
-UPDATE_PACKAGE "luci-app-smartdns" "https://github.com/pymumu/luci-app-smartdns" "master"
-
-# AdguardHome
-UPDATE_PACKAGE "luci-app-adguardhome" "https://github.com/ysuolmai/luci-app-adguardhome" "master"
+# # Passwall
+# UPDATE_PACKAGE "luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall" "main" "pkg"
+# 
+# # SmartDNS
+# UPDATE_PACKAGE "smartdns" "https://github.com/pymumu/openwrt-smartdns" "master" "name"
+# UPDATE_PACKAGE "luci-app-smartdns" "https://github.com/pymumu/luci-app-smartdns" "master"
+# 
+# # AdguardHome
+# UPDATE_PACKAGE "luci-app-adguardhome" "https://github.com/ysuolmai/luci-app-adguardhome" "master"
 
 # WOLPuls
 UPDATE_PACKAGE "luci-app-wolplus" "https://github.com/animegasan/luci-app-wolplus" "main"
