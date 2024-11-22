@@ -11,6 +11,7 @@ env:
   CONFIG_FILE: configs/ZN_M2.config
   DIY_SCRIPT: scripts/diy-script-ZN_M2.sh
   PRESET_SCRIPT: scripts/preset-script-ZN_M2.sh
+  DISTFEEDS_PATH: scripts/distfeeds.conf  # 默认路径，可根据需求调整
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
@@ -98,6 +99,15 @@ jobs:
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
+        # 添加自定义 distfeeds.conf 文件
+        CUSTOM_DISTFEEDS_CONF="${GITHUB_WORKSPACE}/${DISTFEEDS_PATH}"
+        if [ -s "$CUSTOM_DISTFEEDS_CONF" ]; then
+          echo "使用自定义 distfeeds.conf 配置文件"
+          mkdir -p $OPENWRT_PATH/files/etc/opkg
+          cp "$CUSTOM_DISTFEEDS_CONF" $OPENWRT_PATH/files/etc/opkg/distfeeds.conf
+        else
+          echo "未提供有效的 distfeeds.conf 文件，跳过操作"
+        fi
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
         chmod +x ${DIY_SCRIPT}
