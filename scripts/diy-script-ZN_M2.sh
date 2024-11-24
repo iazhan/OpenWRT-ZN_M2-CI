@@ -43,7 +43,7 @@ UPDATE_PACKAGE "luci-theme-argon" "https://github.com/jerrykuku/luci-theme-argon
 UPDATE_PACKAGE "luci-app-argon-config" "https://github.com/jerrykuku/luci-app-argon-config" "master"
 
 # Homeproxy
-UPDATE_PACKAGE "homeproxy" "https://github.com/VIKINGYFY/homeproxy" "main"
+# UPDATE_PACKAGE "homeproxy" "https://github.com/VIKINGYFY/homeproxy" "main"
 
 # # Passwall
 # UPDATE_PACKAGE "luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall" "main" "pkg"
