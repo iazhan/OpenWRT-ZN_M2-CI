@@ -81,6 +81,22 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_U
 # 取消主题默认设置
 # find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
 
+# fantastic packages
+umask 022
+git clone --branch master --single-branch --no-tags --recurse-submodules https://github.com/fantastic-packages/packages.git fantastic_packages
+cd fantastic_packages
+for v in master 22.03 23.05 24.10; do
+	git remote set-branches --add origin $v
+	git fetch origin $v
+	git branch --track $v origin/$v
+done
+cd ..
+cat <<-EOF >> feeds.conf.default
+src-link fantastic_packages_packages fantastic_packages/feeds/packages
+src-link fantastic_packages_luci fantastic_packages/feeds/luci
+src-link fantastic_packages_special fantastic_packages/feeds/special
+EOF
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
